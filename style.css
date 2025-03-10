@@ -150,6 +150,7 @@ iframe, audio {
 
 .container {
     flex: 1;
+    width: 800px;
 }
 
 .image-gallery {
