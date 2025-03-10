@@ -92,6 +92,8 @@ iframe, audio {
     display: flex;
     margin-left: 75px;
     margin-top: 50px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .media-container {
@@ -117,9 +119,10 @@ iframe, audio {
 
 /*.image-gallery {*/
 /*    display: grid;*/
-/*    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
+/*    grid-template-columns: repeat(2, minmax(100px, 200px));*/
+/*    grid-template-rows: repeat(2, auto); !* 2 rows *!*/
 /*    gap: 10px;*/
-/*    margin-top: 20px;*/
+/*    !*margin-top: 20px;*!*/
 /*}*/
 
 /*.image-item {*/
@@ -130,7 +133,8 @@ iframe, audio {
 
 /*.img_source {*/
 /*    width: 100%;*/
-/*    height: auto;*/
+/*    height: 100%;*/
+/*    object-fit: cover; !* Ensures the image covers the entire div *!*/
 /*    display: block;*/
 /*    transition: transform 0.3s ease;*/
 /*}*/
@@ -139,18 +143,19 @@ iframe, audio {
 /*    transform: scale(1.05);*/
 /*}*/
 
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(150px, 200px));
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    gap: 10px;
-    margin-top: 20px;
+.text-content {
+    flex: 1;
+    margin-right: 20px;
 }
 
-.image-item {
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.container {
+    flex: 1;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .img_source {
@@ -162,7 +167,36 @@ iframe, audio {
 }
 
 .img_source:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
+}
+
+.image-item {
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Set to 0 if you want sharp corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Remove if you don't want a shadow */
+    width: 175px; /* Set fixed width for the image container */
+    height: 175px; /* Set fixed height for the image container */
+    box-sizing: border-box;
+}
+
+/*.image-item {*/
+/*    overflow: hidden;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    flex: 1 1 30%;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+.img_source {
+    width: 100%;
+    height: 175px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    display: block;
+}
+
+.text-content {
+    flex: 1;
+    margin-right: 20px;
 }
 
 .sky_color_text {
